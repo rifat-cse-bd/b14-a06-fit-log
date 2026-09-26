@@ -1,4 +1,4 @@
-export const API_BASE = "https://api.abcz.workers.dev/api/fitlog";
+export const API_BASE = "https://api.api-store.workers.dev/api/fitlog";
 
 export async function getWorkouts() {
   // Always fetch fresh so the library streams in behind its loading state.
