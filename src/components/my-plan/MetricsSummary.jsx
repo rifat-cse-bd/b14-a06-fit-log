@@ -1,4 +1,4 @@
-export default function MetricsSummary({ items }) {
+export default function MetricsSummary({ items, label }) {
   const metrics = [
     { label: "Exercises", value: items.length, accent: true },
     { label: "Minutes", value: items.reduce((sum, w) => sum + w.duration, 0) },
@@ -7,7 +7,7 @@ export default function MetricsSummary({ items }) {
 
   return (
     <section
-      aria-label="Today's plan summary"
+      aria-label={label}
       className="grid grid-cols-3 rounded-2xl border border-[#232732] bg-card-2 px-4 pb-6 pt-8 sm:px-6"
     >
       {metrics.map(({ label, value, accent }, index) => (

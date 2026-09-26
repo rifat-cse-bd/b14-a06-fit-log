@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { LuCalendarPlus, LuCheck, LuX } from "react-icons/lu";
+import { LuCheck, LuX } from "react-icons/lu";
 import WorkoutStats from "@/components/WorkoutStats";
 
-export default function PlanCard({ workout, variant, onDone, onRemove, onAddToPlan }) {
+export default function PlanCard({ workout, variant, onDone, onRemove }) {
   const { done } = workout;
 
   return (
@@ -38,7 +38,7 @@ export default function PlanCard({ workout, variant, onDone, onRemove, onAddToPl
           View Details
         </Link>
 
-        {variant === "plan" ? (
+        {variant === "plan" && (
           <button
             type="button"
             onClick={() => onDone(workout)}
@@ -47,15 +47,6 @@ export default function PlanCard({ workout, variant, onDone, onRemove, onAddToPl
           >
             <LuCheck className="size-3.5" aria-hidden />
             {done ? "Done" : "Mark as Done"}
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={() => onAddToPlan(workout)}
-            className="btn btn-primary btn-sm gap-1.5 rounded-full px-4 text-xs font-semibold text-black shadow-sm hover:brightness-110"
-          >
-            <LuCalendarPlus className="size-3.5" aria-hidden />
-            Add to Plan
           </button>
         )}
 

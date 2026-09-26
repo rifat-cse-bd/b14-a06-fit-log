@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import toast from "react-hot-toast";
-import { PLAN_CAP, usePlan } from "@/context/PlanContext";
+import { usePlan } from "@/context/PlanContext";
 import EmptyState from "./EmptyState";
 import MetricsSummary from "./MetricsSummary";
 import PlanCard from "./PlanCard";
@@ -14,7 +14,7 @@ const TABS = [
 ];
 
 export default function MyPlanView({ workouts }) {
-  const { plan, saved, addToPlan, markDone, removeFromPlan, removeFromSaved } = usePlan();
+  const { plan, saved, markDone, removeFromPlan, removeFromSaved } = usePlan();
   const [tab, setTab] = useState("plan");
   const [sortBy, setSortBy] = useState("duration");
 
@@ -32,7 +32,9 @@ export default function MyPlanView({ workouts }) {
     [saved, byId]
   );
 
-  const list = sortWorkouts(tab === "plan" ? planItems : savedItems, sortBy);
+  // The stats and the list both follow the active tab.
+  const activeItems = tab === "plan" ? planItems : savedItems;
+  const list = sortWorkouts(activeItems, sortBy);
 
   function handleDone(workout) {
     markDone(workout.id);
@@ -49,16 +51,12 @@ export default function MyPlanView({ workouts }) {
     }
   }
 
-  function handleAddToPlan(workout) {
-    const result = addToPlan(workout.id);
-    if (result === "added") toast.success(`Added ${workout.name} to today's plan`);
-    else if (result === "exists") toast(`${workout.name} is already in today's plan`, { icon: "📋" });
-    else toast.error(`Today's plan is full — finish your ${PLAN_CAP} lifts first`);
-  }
-
   return (
     <>
-      <MetricsSummary items={planItems} />
+      <MetricsSummary
+        items={activeItems}
+        label={tab === "plan" ? "Today's plan summary" : "Saved workouts summary"}
+      />
 
       <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
         <div
@@ -98,7 +96,6 @@ export default function MyPlanView({ workouts }) {
                 variant={tab}
                 onDone={handleDone}
                 onRemove={handleRemove}
-                onAddToPlan={handleAddToPlan}
               />
             </li>
           ))}
