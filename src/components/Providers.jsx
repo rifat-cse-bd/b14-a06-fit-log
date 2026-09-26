@@ -8,7 +8,9 @@ export default function Providers({ children }) {
     <PlanProvider>
       {children}
       <Toaster
-        position="bottom-right"
+        position="top-right"
+        // Sit below the sticky navbar so toasts don't cover the Plan/Saved badges.
+        containerStyle={{ top: 96 }}
         toastOptions={{
           style: {
             background: "#15171d",
