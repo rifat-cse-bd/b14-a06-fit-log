@@ -12,12 +12,12 @@ export default function Hero() {
           Train with intent. Log every set.
         </h1>
         <p className="max-w-[512px] text-base leading-6 text-muted">
-          FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today&apos;s
-          plan, and watch the week&apos;s work add up.
+          FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into
+          today&apos;s plan, and watch the week&apos;s work add up.
         </p>
         <a
           href="#library"
-          className="btn btn-accent mt-2 h-auto gap-2 rounded-md border-0 px-6 py-3 text-xs font-bold uppercase tracking-[0.3px] shadow-sm hover:brightness-110"
+          className="mt-2 inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-xs font-bold uppercase tracking-[0.3px] text-black shadow-sm transition hover:brightness-110"
         >
           Browse Workouts
           <LuArrowDown className="size-4" aria-hidden />
