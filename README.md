@@ -35,7 +35,7 @@ Workout data comes from the FitLog API:
 3. **Today's Plan and Saved lists:** add or save any lift with one click and get a toast confirmation. Today's plan is capped at five unfinished lifts, and duplicates are blocked.
 4. **Live navbar counters and plan metrics:** the Plan and Saved badges and the Exercises / Minutes / Calories summary update instantly across pages, powered by a shared React Context.
 5. **Plan management tools:** switch between tabs, sort by Duration, Calories or Rating, **Mark as Done**, or remove a lift, each with its own toast.
-6. **Fully responsive, with a custom 404 page:** the layout adapts from phone to desktop, and unknown routes or workout IDs land on a friendly "Missed rep" page.
+6. **Fully responsive, with a custom 404 page:** the layout adapts from phone to desktop, and unknown routes or workout IDs land on a custom 404 Not Found page.
 
 ## 🛠️ Technologies Used
 

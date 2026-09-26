@@ -5,10 +5,12 @@ export const metadata = { title: "Page not found — FitLog" };
 export default function NotFound() {
   return (
     <main className="mx-auto flex w-11/12 flex-1 flex-col items-center justify-center py-24 text-center">
-      <p className="text-[11px] font-bold uppercase tracking-[1.1px] text-accent">Error 404</p>
-      <h1 className="mt-3 font-display text-7xl font-bold uppercase tracking-[-1.5px] sm:text-8xl">
-        Missed rep
+      <h1 className="font-display text-8xl font-bold leading-none tracking-[-2px] text-accent sm:text-9xl lg:text-[12rem]">
+        404
       </h1>
+      <p className="mt-2 font-display text-2xl font-bold uppercase tracking-[0.5px] sm:text-4xl">
+        Not Found
+      </p>
       <p className="mt-4 max-w-md text-base text-muted">
         This page isn&apos;t on the program. The lift you&apos;re looking for doesn&apos;t exist or
         has been moved.
