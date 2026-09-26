@@ -80,10 +80,10 @@ Switch between the **Today's Plan** and **Saved** tabs, sort by **Duration**, **
 
 ## 🔌 API
 
-| Method | Endpoint                                      | Returns          |
-| ------ | --------------------------------------------- | ---------------- |
-| `GET`  | `https://api.abcz.workers.dev/api/fitlog`     | All workouts     |
-| `GET`  | `https://api.abcz.workers.dev/api/fitlog/:id` | A single workout |
+| Method | Endpoint                                           | Returns          |
+| ------ | -------------------------------------------------- | ---------------- |
+| `GET`  | `https://api.api-store.workers.dev/api/fitlog`     | All workouts     |
+| `GET`  | `https://api.api-store.workers.dev/api/fitlog/:id` | A single workout |
 
 ---
 
